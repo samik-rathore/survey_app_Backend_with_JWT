@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "fc75a832-5b07-4259-b146-d2408efac449",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25438774"
+	},
+	"item": [
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"samiksha\",\n    \"password\" : \"samiksha\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign In",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"samiksha\",\n    \"password\" : \"samiksha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "202"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ca-4XHLQNeg3Mf2VTZPlbylWeCDL4c\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 13:00:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2NhOGYxNDE1MWE3OTJkOTQ4YjQyM2UiLCJpYXQiOjE2NzQyMTk2MTAsImV4cCI6MTY3NDIyMzIxMH0.BpZrbcpNhCrCnXlx3S4clTczgBvxZGtieXPXAy-m8ro\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Surveys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Surveys",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/survey",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"survey"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "238"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ee-4T3FX7O8SHb146j+jEWBiw7xjjg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 13:39:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"63ca996bd6f9e158977e42c0\",\n            \"userId\": \"63ca8f14151a792d948b423e\",\n            \"surveyQuestions\": [\n                \"Are you Stupid ?\",\n                \"Are you sane ?\"\n            ],\n            \"createdAt\": \"2023-01-20T13:38:51.124Z\",\n            \"updatedAt\": \"2023-01-20T13:38:51.124Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create survey",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2NhOGYxNDE1MWE3OTJkOTQ4YjQyM2UiLCJpYXQiOjE2NzQyMTk2MTAsImV4cCI6MTY3NDIyMzIxMH0.BpZrbcpNhCrCnXlx3S4clTczgBvxZGtieXPXAy-m8ro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"surveyQuestions\" : [\n        \"Are you Stupid ?\",\n        \"Are you sane ?\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/survey/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"survey",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create survey",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surveyQuestions\" : [\n        \"Are you Stupid ?\",\n        \"Are you sane ?\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/survey/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"survey",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "236"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ec-UoWygH3sMRKqC8cuerulr5v7IlM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 13:38:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"userId\": \"63ca8f14151a792d948b423e\",\n        \"surveyQuestions\": [\n            \"Are you Stupid ?\",\n            \"Are you sane ?\"\n        ],\n        \"_id\": \"63ca996bd6f9e158977e42c0\",\n        \"createdAt\": \"2023-01-20T13:38:51.124Z\",\n        \"updatedAt\": \"2023-01-20T13:38:51.124Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit survey",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2NhOGYxNDE1MWE3OTJkOTQ4YjQyM2UiLCJpYXQiOjE2NzQyMTk2MTAsImV4cCI6MTY3NDIyMzIxMH0.BpZrbcpNhCrCnXlx3S4clTczgBvxZGtieXPXAy-m8ro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"surveyId\" : \"63ca996bd6f9e158977e42c0\",\n    \"surveyResponses\" : [ \n        {\n            \"question\" : \"Are you Stupid ?\",\n            \"response\" : true\n        },\n        {\n            \"question\" : \"Are you sane ? \",\n            \"response\" : false\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/survey/submit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"survey",
+						"submit"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Submit survey",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surveyId\" : \"63ca996bd6f9e158977e42c0\",\n    \"surveyResponses\" : [ \n        {\n            \"question\" : \"Are you Stupid ?\",\n            \"response\" : true\n        },\n        {\n            \"question\" : \"Are you sane ? \",\n            \"response\" : false\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/survey/submit",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"survey",
+								"submit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "400"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"190-c/z9LTcd9jy15HwC5ISAN2lw5FY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 13:45:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"userId\": \"63ca8f14151a792d948b423e\",\n        \"surveyId\": \"63ca996bd6f9e158977e42c0\",\n        \"surveyResponses\": [\n            {\n                \"question\": \"Are you Stupid ?\",\n                \"response\": true,\n                \"_id\": \"63ca9add710c314ee9f2da31\"\n            },\n            {\n                \"question\": \"Are you sane ? \",\n                \"response\": false,\n                \"_id\": \"63ca9add710c314ee9f2da32\"\n            }\n        ],\n        \"_id\": \"63ca9add710c314ee9f2da30\",\n        \"createdAt\": \"2023-01-20T13:45:01.114Z\",\n        \"updatedAt\": \"2023-01-20T13:45:01.114Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get survey results",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2NhOGYxNDE1MWE3OTJkOTQ4YjQyM2UiLCJpYXQiOjE2NzQyMTk2MTAsImV4cCI6MTY3NDIyMzIxMH0.BpZrbcpNhCrCnXlx3S4clTczgBvxZGtieXPXAy-m8ro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/survey/results?surveyId=63ca996bd6f9e158977e42c0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"survey",
+						"results"
+					],
+					"query": [
+						{
+							"key": "surveyId",
+							"value": "63ca996bd6f9e158977e42c0"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get survey results",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/survey/results?surveyId=63ca996bd6f9e158977e42c0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"survey",
+								"results"
+							],
+							"query": [
+								{
+									"key": "surveyId",
+									"value": "63ca996bd6f9e158977e42c0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "402"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"192-ZbljAipU38LvzsQShug0VHqcl/Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 13:47:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"63ca9add710c314ee9f2da30\",\n            \"userId\": \"63ca8f14151a792d948b423e\",\n            \"surveyId\": \"63ca996bd6f9e158977e42c0\",\n            \"surveyResponses\": [\n                {\n                    \"question\": \"Are you Stupid ?\",\n                    \"response\": true,\n                    \"_id\": \"63ca9add710c314ee9f2da31\"\n                },\n                {\n                    \"question\": \"Are you sane ? \",\n                    \"response\": false,\n                    \"_id\": \"63ca9add710c314ee9f2da32\"\n                }\n            ],\n            \"createdAt\": \"2023-01-20T13:45:01.114Z\",\n            \"updatedAt\": \"2023-01-20T13:45:01.114Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
